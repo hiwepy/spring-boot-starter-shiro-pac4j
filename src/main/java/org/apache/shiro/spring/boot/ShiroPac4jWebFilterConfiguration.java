@@ -15,6 +15,10 @@
  */
 package org.apache.shiro.spring.boot;
 
+import io.buji.pac4j.context.ShiroSessionStore;
+import io.buji.pac4j.filter.CallbackFilter;
+import io.buji.pac4j.filter.LogoutFilter;
+import io.buji.pac4j.filter.SecurityFilter;
 import org.apache.shiro.biz.spring.ShiroFilterProxyFactoryBean;
 import org.apache.shiro.spring.boot.pac4j.ShiroPac4jFilterFactoryBean;
 import org.apache.shiro.spring.boot.pac4j.ext.filter.Pac4jUserFilter;
@@ -39,11 +43,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import io.buji.pac4j.context.ShiroSessionStore;
-import io.buji.pac4j.filter.CallbackFilter;
-import io.buji.pac4j.filter.LogoutFilter;
-import io.buji.pac4j.filter.SecurityFilter;
 
 
 @Configuration
@@ -74,7 +73,7 @@ public class ShiroPac4jWebFilterConfiguration extends AbstractShiroWebFilterConf
 	/**
 	 * 账号注销过滤器 ：处理账号注销
 	 */
-	@Bean("logout")
+	@Bean("pac4j-logout")
 	public FilterRegistrationBean<LogoutFilter> logoutFilter(Config config){
 		
 		FilterRegistrationBean<LogoutFilter> filterRegistration = new FilterRegistrationBean<LogoutFilter>();
@@ -124,7 +123,7 @@ public class ShiroPac4jWebFilterConfiguration extends AbstractShiroWebFilterConf
 	}
 	
 	
-	@Bean("user")
+	@Bean("pac4j-user")
 	public FilterRegistrationBean<Pac4jUserFilter> pac4jUserFilter(){
 		FilterRegistrationBean<Pac4jUserFilter> registration = new FilterRegistrationBean<Pac4jUserFilter>(); 
 		Pac4jUserFilter userFilter = new Pac4jUserFilter();

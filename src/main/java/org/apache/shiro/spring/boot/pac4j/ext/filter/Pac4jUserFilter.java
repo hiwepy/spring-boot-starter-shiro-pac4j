@@ -16,13 +16,13 @@
 package org.apache.shiro.spring.boot.pac4j.ext.filter;
 
 
-import javax.servlet.ServletRequest;
-
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.web.filter.authc.UserFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.pac4j.core.util.Pac4jConstants;
+
+import javax.servlet.ServletRequest;
 
 public class Pac4jUserFilter extends UserFilter {
 

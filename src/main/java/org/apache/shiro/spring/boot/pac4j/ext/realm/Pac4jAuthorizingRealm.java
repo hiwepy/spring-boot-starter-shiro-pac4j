@@ -1,14 +1,13 @@
 package org.apache.shiro.spring.boot.pac4j.ext.realm;
 
-import java.util.Optional;
-
+import io.buji.pac4j.realm.Pac4jRealm;
+import io.buji.pac4j.subject.Pac4jPrincipal;
+import io.buji.pac4j.token.Pac4jToken;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.pac4j.core.profile.CommonProfile;
 
-import io.buji.pac4j.realm.Pac4jRealm;
-import io.buji.pac4j.subject.Pac4jPrincipal;
-import io.buji.pac4j.token.Pac4jToken;
+import java.util.Optional;
 
 /**
  *	登录后 Principal 为 Pac4jPrincipal对象,获取传递回来的Profile,

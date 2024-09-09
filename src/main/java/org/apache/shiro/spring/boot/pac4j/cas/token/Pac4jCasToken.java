@@ -15,15 +15,14 @@
  */
 package org.apache.shiro.spring.boot.pac4j.cas.token;
 
-import java.util.List;
-
+import io.buji.pac4j.token.Pac4jToken;
 import org.apache.shiro.authc.HostAuthenticationToken;
 import org.apache.shiro.authc.RememberMeAuthenticationToken;
 import org.apache.shiro.biz.authc.token.LoginType;
 import org.apache.shiro.biz.authc.token.LoginTypeAuthenticationToken;
 import org.pac4j.core.profile.CommonProfile;
 
-import io.buji.pac4j.token.Pac4jToken;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class Pac4jCasToken extends Pac4jToken implements HostAuthenticationToken, RememberMeAuthenticationToken,
