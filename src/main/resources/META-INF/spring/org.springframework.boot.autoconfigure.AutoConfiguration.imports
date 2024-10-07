@@ -1,0 +1,2 @@
+org.apache.shiro.spring.boot.ShiroPac4jWebAutoConfiguration
+org.apache.shiro.spring.boot.ShiroPac4jWebFilterConfiguration
